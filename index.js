@@ -1,13 +1,13 @@
 const express = require('express');
 const conekta = require("./src/conekta");
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
-app.get("/", (req, res) => res.status(200).send({"mensaje" : "mamamwebi"}))
-app.post("/payment", conekta)
+app.get('/', (req, res) => res.status(200).send({"mensaje" : "mamamwebi"}))
+app.post('/payment', conekta)
 app.listen(PORT, ()=> {
-    console.log(`Escuchando en el puerto : ${PORT}`)
+    console.log(`Escuchando en el puerto ${PORT}`)
 })
 /*const { ApolloServer, gql } = require('apollo-server-express');
 const { buildSchema }= require("graphql");

@@ -1,7 +1,7 @@
 const express = require('express');
-const conekta = require("./conekta");
+const conekta = require("./src/conekta");
 const app = express();
-const PORT = 6969;
+const PORT = 3001;
 
 app.use(express.json());
 app.get("/", (req, res) => res.status(200).send({"mensaje" : "mamamwebi"}))

@@ -4,6 +4,7 @@ const app = express();
 const PORT = 6969;
 
 app.use(express.json());
+app.get("/", (req, res) => res.status(200).send({"mensaje" : "mamamwebi"}))
 app.post("/payment", conekta)
 app.listen(PORT, ()=> {
     console.log(`Escuchando en el puerto : ${PORT}`)
